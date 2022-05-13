@@ -4,16 +4,16 @@ from twilio.rest import Client
 import json
 import os
 import angel_text
-
-with open("src/twilio-security.json") as f:
+print(os.getcwd())
+with open("./src/twilio-security.json") as f:
     twilio_credentials = json.load(f)
     twilio_account= twilio_credentials["sid"]
     twilio_token = twilio_credentials["token"]
     twilio_number = twilio_credentials["phone_number"]
 texter = angel_text.AngelText(twilio_account, twilio_token, twilio_number)
 msg = "Testing Hi Brother - Tristan"
-phone = "14086934143"
-texter.send_message()
+phone = "14082052148"
+texter.send_message(msg,phone)
 # # send a message in the morning
 # schedule.every().day.at("1:11").do(send_message, GOOD_MORNING_QUOTES)
 # schedule.every().day.at("11:11").do(send_message, GOOD_MORNING_QUOTES)
